@@ -64,6 +64,8 @@ public class AuthFilter extends HttpFilter {
             res.getWriter().write("Not authenticated");
             return; // чтобы не попало в chain.doFilter
         }
+        boolean valid = userManager.authentication(login, password);
+
 
         // NPE - NullPointerException
         if (!Objects.equals(users.get(login), password)) {
