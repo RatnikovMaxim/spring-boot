@@ -1,41 +1,43 @@
 ### users.getAll
 GET http://localhost:8080/users
 X-Login: vasya
-X-Password: secret
+X-Password: password
 
 ### users.getById
 GET http://localhost:8080/users/1
 X-Login: vasya
-X-Password: secret
+X-Password: password
 
 ### users.create
 POST http://localhost:8080/users
 X-Login: vasya
-X-Password: secret
+X-Password: password
 Content-Type: application/json
 
 {
   "id": 0,
-  "login": "sanya",
-  "password": "secret"
+  "login": "sayvya",
+  "password": "secret",
+  "role": ["ROLE_USER"]
 }
 
 ### users.update
 PUT http://localhost:8080/users
 X-Login: vasya
-X-Password: secret
+X-Password: password
 Content-Type: application/json
 
 {
-  "id": 3,
+  "id": 1,
   "login": "vanya111",
-  "password": "top-secret!!!!!!!!!!!!!!!!!!!!"
+  "password": "top-secret!!!!!!!!!!!!!!!!!!!!",
+  "roles": ["ROLE_USER", "ROLE_ADMIN"]
 }
 
 ### users.deleteById
 DELETE http://localhost:8080/users/1
 X-Login: vasya
-X-Password: secret
+X-Password: password
 
 
 
@@ -43,38 +45,48 @@ X-Password: secret
 ### posts.getAll
 GET http://localhost:8080/posts
 X-Login: vasya
-X-Password: secret
+X-Password: password
 
 ### posts.getById
 GET http://localhost:8080/posts/1
 X-Login: vasya
-X-Password: secret
+X-Password: password
 
 ### posts.create
 POST http://localhost:8080/posts
 X-Login: vasya
-X-Password: secret
+X-Password: password
 Content-Type: application/json
 
 {
   "id": 0,
-  "name": "Reno",
-  "content": "cars"
+  "name": "Renore",
+  "content": "cars",
+  "tags": ["fgh", "fgh"],
+  "geo": {
+    "lat": 65.0,
+    "lng": 65.0
+  }
 }
 
 ### posts.update
 PUT http://localhost:8080/posts
 X-Login: vasya
-X-Password: secret
+X-Password: password
 Content-Type: application/json
 
 {
-  "id": 1,
-  "name": "ball",
-  "content": "sport"
+  "id": 2,
+  "name": "ballada",
+  "content": "sport",
+  "tags": ["demo", "fun"],
+  "geo": {
+    "lat": 75.0,
+    "lng": 75.0
+  }
 }
 
 ### posts.deleteById
-DELETE http://localhost:8080/posts/2
+DELETE http://localhost:8080/posts/5
 X-Login: vasya
-X-Password: secret
+X-Password: password

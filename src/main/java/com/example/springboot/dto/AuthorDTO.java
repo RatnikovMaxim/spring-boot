@@ -2,14 +2,12 @@ package com.example.springboot.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.sql.SQLType;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class UserResponseDTO {
+public class AuthorDTO {
     private long id;
     private String login;
-    private List<String> role;
 }
