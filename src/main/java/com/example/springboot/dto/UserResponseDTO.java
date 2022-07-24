@@ -11,5 +11,5 @@ import java.util.List;
 public class UserResponseDTO {
     private long id;
     private String login;
-    private List<String> role;
+    private List<String> roles;
 }

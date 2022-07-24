@@ -16,9 +16,9 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "login": "sayvya",
-  "password": "secret",
-  "role": ["ROLE_USER"]
+  "login": "tyaru",
+  "password": "password",
+  "roles": ["ROLE_ADMIN"]
 }
 
 ### users.update
@@ -60,12 +60,12 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "name": "Renore",
-  "content": "cars",
-  "tags": ["fgh", "fgh"],
+  "name": "РеЁЁёц2233gm",
+  "content": "Ва2134ЁЁёз",
+  "tags": ["#ромё11ё", "#ВЁИ32НО"],
   "geo": {
-    "lat": 65.0,
-    "lng": 65.0
+    "lat": -65.00,
+    "lng": 65.00
   }
 }
 
@@ -79,9 +79,9 @@ Content-Type: application/json
   "id": 2,
   "name": "ballada",
   "content": "sport",
-  "tags": ["demo", "fun"],
+  "tags": ["#demo", "#fun"],
   "geo": {
-    "lat": 75.0,
+    "lat": 65.0,
     "lng": 75.0
   }
 }

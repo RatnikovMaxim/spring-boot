@@ -61,7 +61,7 @@ public class UserManager {
                 0,
                 requestDTO.getLogin(),
                 passwordEncoder.encode(requestDTO.getPassword()),
-                requestDTO.getRole()
+                requestDTO.getRoles()
         );
         final UserEntity savedEntity = userRepository.save(userEntity);
         return userEntityToUserResponseDTO.apply(savedEntity);
@@ -70,11 +70,12 @@ public class UserManager {
     public UserResponseDTO update(final UserRequestDTO requestDTO, final Authentication authentication) {
         if (!authentication.hasRole(Roles.ROLE_ADMIN)) {
             throw new ForbiddenException();
+
         }
         final UserEntity userEntity = userRepository.getReferenceById(requestDTO.getId());
         userEntity.setLogin(requestDTO.getLogin());
         userEntity.setPassword(passwordEncoder.encode(requestDTO.getPassword()));
-        userEntity.setRoles(requestDTO.getRole());
+        userEntity.setRoles(requestDTO.getRoles());
 
         return userEntityToUserResponseDTO.apply(userEntity);
     }

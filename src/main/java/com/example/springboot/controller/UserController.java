@@ -5,10 +5,14 @@ import com.example.springboot.dto.UserResponseDTO;
 import com.example.springboot.manager.UserManager;
 import com.example.springboot.security.Authentication;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 
+@Validated
 @RestController
 @RequiredArgsConstructor // генерирует конструктор только для final non-static полей
 public class UserController {
@@ -22,7 +26,8 @@ public class UserController {
 
     // TODO: http://localhost:8080/users/1
     @GetMapping("/users/{id}")
-    public UserResponseDTO getById(@RequestAttribute final Authentication authentication, @PathVariable final long id) {
+    public UserResponseDTO getById(@RequestAttribute final Authentication authentication,
+                                   @Min(1) @PathVariable final long id) {
         final UserResponseDTO responseDTO = manager.getById(id, authentication);
         return responseDTO;
     }
@@ -30,19 +35,21 @@ public class UserController {
     @PostMapping("/users")
     public UserResponseDTO create(
             @RequestAttribute final Authentication authentication,
-            @RequestBody final UserRequestDTO requestDTO) {
+            @Valid @RequestBody final UserRequestDTO requestDTO) {
         final UserResponseDTO responseDTO = manager.create(requestDTO, authentication);
         return responseDTO;
     }
 
     @PutMapping("/users")
-    public UserResponseDTO update(@RequestAttribute final Authentication authentication, @RequestBody final UserRequestDTO requestDTO) {
+    public UserResponseDTO update(@RequestAttribute final Authentication authentication,
+                                  @Valid @RequestBody final UserRequestDTO requestDTO) {
         final UserResponseDTO responseDTO = manager.update(requestDTO, authentication);
         return responseDTO;
     }
 
     @DeleteMapping("/users/{id}")
-    public void deleteById(@RequestAttribute final Authentication authentication, @PathVariable final long id) {
+    public void deleteById(@RequestAttribute final Authentication authentication,
+                           @Min(1) @PathVariable final long id) {
         manager.deleteById(id, authentication);
     }
 }
