@@ -33,7 +33,6 @@ public class PostManager {
     private final Function<PostEntity, PostResponseDTO> postEntityToPostResponseDTO = postEntity -> new PostResponseDTO(
             postEntity.getId(),
             new AuthorDTO(postEntity.getAuthor().getId(), postEntity.getAuthor().getLogin()),
-            postEntity.getName(),
             postEntity.getContent(),
             postEntity.getTags(),
 
@@ -68,7 +67,6 @@ public class PostManager {
         final PostEntity postEntity = new PostEntity(
                 0,
                 userEntity,
-                requestDTO.getName(),
                 requestDTO.getContent(),
                 requestDTO.getTags(),
                 Optional.ofNullable(requestDTO.getGeo()).map(o -> new GeoEmbeddable(o.getLat(), o.getLng())).orElse(null)
@@ -83,7 +81,6 @@ public class PostManager {
             throw new ForbiddenException();
         }
         final PostEntity postEntity = postRepository.getReferenceById(requestDTO.getId());
-        postEntity.setName(requestDTO.getName());
         postEntity.setContent(requestDTO.getContent());
         postEntity.setTags(requestDTO.getTags());
         postEntity.setGeo(

@@ -57,6 +57,7 @@ public class UserManager {
         if (!authentication.hasRole(Roles.ROLE_ADMIN)) {
             throw new ForbiddenException();
         }
+
         final UserEntity userEntity = new UserEntity(
                 0,
                 requestDTO.getLogin(),

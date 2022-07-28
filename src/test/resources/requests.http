@@ -60,7 +60,6 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "name": "РеЁЁёц2233gm",
   "content": "Ва2134ЁЁёз",
   "tags": ["#ромё11ё", "#ВЁИ32НО"],
   "geo": {
@@ -77,7 +76,6 @@ Content-Type: application/json
 
 {
   "id": 2,
-  "name": "ballada",
   "content": "sport",
   "tags": ["#demo", "#fun"],
   "geo": {

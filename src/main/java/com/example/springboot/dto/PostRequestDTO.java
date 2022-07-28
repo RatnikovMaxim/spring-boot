@@ -12,9 +12,6 @@ import java.util.List;
 public class PostRequestDTO {
     @Min(0)
     private long id;
-    @NotNull
-    @Pattern(regexp = "[A-Za-z0-9\\u0410-\\u042F\\u0430-\\u044F\\u0401\\u0451]{3,100}")
-    private String name;
     @NotBlank
     private String content;
     @Size(min = 1)

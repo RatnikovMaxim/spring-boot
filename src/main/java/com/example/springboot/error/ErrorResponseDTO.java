@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class ErrorResponseDTO {
-    public static final String SERVER_ERROR = "sever_error";
+    public static final String SERVER_ERROR = "server_error";
     public static final String ARGUMENT_NOT_VALID = "argument_not_valid";
     public static final String USER_NOT_FOUND = "user_not_found";
     public static final String NOT_ENOUGH_AUTHORITY = "not_enough_authority";

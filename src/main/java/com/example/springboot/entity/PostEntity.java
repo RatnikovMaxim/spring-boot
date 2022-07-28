@@ -21,8 +21,6 @@ public class PostEntity {
     @JoinColumn(name = "author_id")
     @ManyToOne(optional = false)
     private UserEntity author;
-    @Column(unique = true, nullable = false, columnDefinition = "TEXT")
-    private String name;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
     @ElementCollection

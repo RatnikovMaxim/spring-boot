@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 public class Authentication {
     private final long id;
-    private List<String> roles;
+    private final List<String> roles;
 
     public boolean hasRole(final String role) {
         return roles.contains(role);
